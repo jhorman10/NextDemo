@@ -1,9 +1,12 @@
-import { FC } from 'react';
 import Head from 'next/head';
 import { NavBar } from '../NavBar';
 import styles from './MainLayout.module.css';
 
-export const MainLayout: FC = ({ children }: any) => {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export const MainLayout = (props: LayoutProps) => {
   return (
     <div className={styles.MainLayout}>
       <Head>
@@ -14,7 +17,7 @@ export const MainLayout: FC = ({ children }: any) => {
       </Head>
       <NavBar />
       <main className={styles.main}>
-        <div>{children}</div>
+        <div>{props.children}</div>
       </main>
     </div>
   );

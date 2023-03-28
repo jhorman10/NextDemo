@@ -19,13 +19,12 @@ const menuItems = [
     href: '/pricing',
   },
 ];
-
 export const NavBar = () => {
   return (
     <nav className={styles['menu-container']}>
-      {menuItems.map(({ text, href }) => (
-        <ActiveLink key={href} text={text} href={href}>
-          {text}
+      {menuItems.map((menuItem: any) => (
+        <ActiveLink key={menuItem.href} {...menuItem}>
+          {menuItem.text}
         </ActiveLink>
       ))}
     </nav>
