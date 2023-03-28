@@ -1,4 +1,6 @@
-export const DarkLayout = ({ children }) => {
+import { FC } from 'react';
+
+export const DarkLayout: FC = ({ children }: any) => {
   return (
     <div
       style={{
